@@ -1,0 +1,19 @@
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import cronJob from 'cron';
+import { postNewTweets } from './lib/twitterVerse-bot';
+
+const PORT = 5001;
+const app = express();
+
+app.use('/', (req: Request, res: Response) => {
+  res.send('<h1>Welcome to the twitterVerse Bot</h1>');
+});
+
+app.use(cors());
+
+postNewTweets();
+
+app.listen(PORT, () => {
+  console.log(`Listening on PORT: ${PORT as number}`);
+});
