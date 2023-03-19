@@ -7,7 +7,7 @@
     "test": "jest",
     "tsc": "tsc",
     "dev": "nodemon public/index.js",
-    "start": "nodemon src/index.ts",
+    "start": "nodemon public/index.js",
     "build": "tsc"
   },
   "author": "Emmanuel Okuchukwu",

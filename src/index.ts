@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import cronJob from 'cron';
+import cron from 'cron';
 // import { postNewTweets } from './lib/twitterVerse-bot';
 
 const PORT = 5001;
@@ -14,16 +14,16 @@ app.use(cors());
 
 // postNewTweets();
 
-// const schedule = new cronJob.CronJob(
-//   '* * * * * *',
-//   () => {
-//     console.log('Helllooo there!');
-//   },
-//   null,
-//   true
-// );
+const schedule = new cron.CronJob(
+  '* * * * * *',
+  () => {
+    console.log('Helllooo there!');
+  },
+  null,
+  true
+);
 
-// schedule.start();
+schedule.start();
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT: ${PORT as number}`);
