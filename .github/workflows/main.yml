@@ -2,9 +2,11 @@ name: TwitterVerse Actions
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
   pull_request:
     branches: [ main ]
+    types: [opened, synchronized]
 
 jobs:  
   deployment_pipeline:
