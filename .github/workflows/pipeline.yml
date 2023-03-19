@@ -5,13 +5,13 @@ name: TwitterVerse Actions
     pull_request:
       branches: [main]
   
-  jobs:  
-    deployment_pipeline:
-      runs-on: ubuntu-20.04
-        steps:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-node@v3
-            with: 
-              node_version: 16
-          - name: npm install
-          - run: npm install
+  # jobs:  
+  #   deployment_pipeline:
+  #     runs-on: ubuntu-20.04
+  #       steps:
+  #         - uses: actions/checkout@v3
+  #         - uses: actions/setup-node@v3
+  #           with: 
+  #             node_version: 16
+  #         - name: npm install
+  #         - run: npm install
