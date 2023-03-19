@@ -17,7 +17,7 @@
     "@types/cron": "^2.0.0",
     "@types/express": "^4.17.15",
     "@types/twit": "^2.2.31",
-    "jest": "^29.3.1",
+    "jest": "^29.5.0",
     "nodemon": "^2.0.21",
     "supertest": "^6.3.3",
     "ts-jest": "^29.0.3",
