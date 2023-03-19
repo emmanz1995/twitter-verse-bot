@@ -10,7 +10,7 @@
     "start": "nodemon public/index.js",
     "build": "tsc"
   },
-  "author": "Emmanuel Okuchukwu",
+  "author": "Emmanuel Okuchukwu (emmanza2@gmail.com)",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
