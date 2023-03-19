@@ -14,16 +14,16 @@ app.use(cors());
 
 // postNewTweets();
 
-const schedule = new cronJob.CronJob(
-  '* * * * * *',
-  () => {
-    console.log('Helllooo there!');
-  },
-  null,
-  true
-);
+// const schedule = new cronJob.CronJob(
+//   '* * * * * *',
+//   () => {
+//     console.log('Helllooo there!');
+//   },
+//   null,
+//   true
+// );
 
-schedule.start();
+// schedule.start();
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT: ${PORT as number}`);
