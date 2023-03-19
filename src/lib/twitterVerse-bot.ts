@@ -11,11 +11,11 @@ const twitter = new twit({
 function getAllTweets() {}
 function postNewTweets() {
   twitter.post('statuses/update', { status: 'John 3:16' }, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(data);
-    }
+    // if (err) {
+    //   console.log(err);
+    // } else {
+    //   console.log(data);
+    // }
   });
 }
 
