@@ -1,0 +1,8 @@
+name: TwitterVerse Dependabot
+
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schdule:
+      interval: "daily"
