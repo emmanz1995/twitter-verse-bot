@@ -51,7 +51,7 @@ const scriptures: IScriptures[] = [
   },
   {
     id: 9,
-    verse: 'Isiah 53:5',
+    verse: 'Isiah 53v5',
     scripture: '',
   },
   {
