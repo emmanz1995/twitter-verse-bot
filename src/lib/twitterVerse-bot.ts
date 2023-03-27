@@ -1,7 +1,7 @@
 import twit from 'twit';
 import config from '../config';
-import { generateRandomBibleVerse } from '../helpers/generateRandomBibleVerse';
-import { scriptures } from '../connectors/data';
+// import { generateRandomBibleVerse } from '../helpers/generateRandomBibleVerse';
+// import { scriptures } from '../connectors/data';
 
 const twitter = new twit({
   consumer_key: config.consumer_key,
