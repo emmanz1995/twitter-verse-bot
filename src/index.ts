@@ -2,8 +2,11 @@ import express, { Request, Response } from 'express';
 import cors from 'cors';
 import cron from 'cron';
 // import { postNewTweets } from './lib/twitterVerse-bot';
+// import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
+import { scriptures } from './connectors/data';
+import { postNewTweets } from './lib/twitterVerse-bot';
 
-const PORT = 5001;
+const PORT: number = 5001;
 const app = express();
 
 app.use('/', (req: Request, res: Response) => {
@@ -17,7 +20,8 @@ app.use(cors());
 const schedule = new cron.CronJob(
   '* * * * * *',
   () => {
-    console.log('Helllooo there!');
+    console.log('Hello World!');
+    postNewTweets();
   },
   null,
   true
@@ -26,5 +30,5 @@ const schedule = new cron.CronJob(
 schedule.start();
 
 app.listen(PORT, () => {
-  console.log(`Listening on PORT: ${PORT as number}`);
+  console.log(`Listening on PORT: ${PORT}`);
 });
