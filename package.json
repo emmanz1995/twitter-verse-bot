@@ -32,7 +32,8 @@
     "lodash": "^4.17.21",
     "mongoose": "^7.0.3",
     "twit": "^2.2.11",
-    "twitter-api-v2": "^1.14.2"
+    "twitter-api-v2": "^1.14.2",
+    "uuidv4": "^6.2.13"
   },
   "jest": {
     "verbose": true
