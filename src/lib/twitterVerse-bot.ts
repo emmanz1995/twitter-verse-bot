@@ -18,10 +18,10 @@ const readOnlyClient = bearerToken.readOnly;
 
 // function getAllTweets() {}
 async function postNewTweets() {
-  const tweet = await client.v2.tweet(
+  await client.v2.tweet(
     'In the beginning was the word, and the word was with God, and the word was God.'
   );
-  console.log(tweet);
+  // console.log(tweet);
 }
 
 export { postNewTweets };
