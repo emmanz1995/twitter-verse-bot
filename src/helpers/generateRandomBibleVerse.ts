@@ -1,8 +1,6 @@
 import { scriptures, IScriptures } from '../connectors/data';
 
 export const generateRandomBibleVerse = (scripture: IScriptures[]) => {
-  // const bibleVerse = Math.floor(Math.random() * scripture.length);
-  // return scriptures[bibleVerse];
   let bibleVerse = [];
 
   const randomNumber = Math.floor(Math.random() * 50 + 1);
