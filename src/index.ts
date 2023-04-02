@@ -6,6 +6,7 @@ import cron from 'cron';
 import { scriptures } from './connectors/data';
 import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
 
+// eslint-disable-next-line @typescript-eslint/no-inferrable-types
 const PORT: number = 5001;
 const app = express();
 
