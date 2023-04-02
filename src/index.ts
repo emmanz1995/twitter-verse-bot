@@ -4,7 +4,7 @@ import cron from 'cron';
 // import { postNewTweets } from './lib/twitterVerse-bot';
 // import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
 import { scriptures } from './connectors/data';
-import { postNewTweets } from './lib/twitterVerse-bot';
+import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
 
 const PORT: number = 5001;
 const app = express();
@@ -20,8 +20,7 @@ app.use(cors());
 const schedule = new cron.CronJob(
   '* * * * * *',
   () => {
-    console.log('Hello World!');
-    postNewTweets();
+    console.log(generateRandomBibleVerse(scriptures));
   },
   null,
   true
