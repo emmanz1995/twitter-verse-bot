@@ -2,12 +2,12 @@ import { scriptures, IScriptures } from '../connectors/data';
 // import _ from 'lodash';
 
 export const generateRandomBibleVerse = (scripture: IScriptures[]) => {
-  let bibleVerse = [];
+  const bibleVerse = [];
 
   const randomNumber = Math.floor(Math.random() * 50 + 1);
 
   if (randomNumber < 25) {
-    let randomIndex = Math.floor(Math.random() * scripture.length);
+    const randomIndex = Math.floor(Math.random() * scripture.length);
     bibleVerse.push(scripture[randomIndex]);
   }
 
