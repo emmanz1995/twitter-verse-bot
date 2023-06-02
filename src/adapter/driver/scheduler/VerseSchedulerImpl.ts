@@ -1,5 +1,5 @@
 import cron from 'cron';
-import { VerseScheduler } from './VerseScheduler';
+import { VerseScheduler } from '../../../application/port/adapter/VerseScheduler';
 
 class VerseSchedulerImpl implements VerseScheduler {
   constructor() {
