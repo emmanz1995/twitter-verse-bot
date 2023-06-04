@@ -1,34 +1,21 @@
-import express, { Request, Response } from 'express';
-import cors from 'cors';
+import startup from './adapter/driven/express';
 import cron from 'cron';
-// import { postNewTweets } from './lib/twitterVerse-bot';
-// import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
 import { scriptures } from './connectors/data';
-import { generateRandomBibleVerse } from './helpers/generateRandomBibleVerse';
+import { generateRandomBibleVerse } from './application/helpers/generateRandomBibleVerse';
 
-// eslint-disable-next-line @typescript-eslint/no-inferrable-types
-const PORT: number = 5001;
-const app = express();
+// TODO: Sort out all the existing folders into they respective folders based on the clean architure definition given by Anoj.
 
-app.use('/', (req: Request, res: Response) => {
-  res.send('<h1>Welcome to the twitterVerse Bot</h1>');
-});
-
-app.use(cors());
+startup;
 
 // postNewTweets();
 
-const schedule = new cron.CronJob(
-  '* * * * * *',
-  () => {
-    console.log(generateRandomBibleVerse(scriptures));
-  },
-  null,
-  true
-);
+// const schedule = new cron.CronJob(
+//   '* * * * * *',
+//   () => {
+//     console.log(generateRandomBibleVerse(scriptures));
+//   },
+//   null,
+//   true
+// );
 
-schedule.start();
-
-app.listen(PORT, () => {
-  console.log(`Listening on PORT: ${PORT}`);
-});
+// schedule.start();

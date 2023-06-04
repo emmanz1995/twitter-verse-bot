@@ -1,5 +1,4 @@
-import { scriptures, IScriptures } from '../connectors/data';
-// import _ from 'lodash';
+import { scriptures, IScriptures } from '../../connectors/data';
 
 export const generateRandomBibleVerse = (scripture: IScriptures[]) => {
   const bibleVerse = [];
@@ -11,11 +10,8 @@ export const generateRandomBibleVerse = (scripture: IScriptures[]) => {
     bibleVerse.push(scripture[randomIndex]);
   }
 
-  if (typeof bibleVerse === null) {
+  if (bibleVerse === null) {
     return scriptures[0];
   }
-  // const verse = _.get(scriptures[0], 'verse');
-  // const scriptureVerse = _.get(scriptures[0], 'scriptureVerse');
-
   return bibleVerse;
 };
