@@ -7,7 +7,7 @@
     "test": "jest",
     "tsc": "tsc",
     "dev": "nodemon public/app.js",
-    "start": "nodemon public/app.js",
+    "start": "node public/app.js",
     "build": "tsc"
   },
   "author": "Emmanuel Okuchukwu (emmanza2@gmail.com)",
