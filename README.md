@@ -10,7 +10,11 @@ First you would need to run
 
 ```
 npm i
+```
+
 or
+
+```
 npm install
 ```
 
