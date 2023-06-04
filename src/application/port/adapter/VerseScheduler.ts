@@ -1,5 +1,5 @@
 interface VerseScheduler {
-  start(): void
+  start(): void;
 }
 
-export { VerseScheduler }
+export { VerseScheduler };

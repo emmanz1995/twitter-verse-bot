@@ -2,14 +2,13 @@ import cron from 'cron';
 import { VerseScheduler } from '../../../application/port/adapter/VerseScheduler';
 
 class VerseSchedulerImpl implements VerseScheduler {
-  constructor() {
-  }
+  constructor() {}
 
   public start(): void {
     const schedule = new cron.CronJob(
       '*/10 * * * * *',
       async () => {
-        const randomVerse: String = "Random Verse Every 10 Seconds"
+        const randomVerse: string = 'Random Verse Every 10 Seconds';
         console.log(randomVerse);
       },
       null,
@@ -20,4 +19,4 @@ class VerseSchedulerImpl implements VerseScheduler {
   }
 }
 
-export { VerseSchedulerImpl }
+export { VerseSchedulerImpl };
