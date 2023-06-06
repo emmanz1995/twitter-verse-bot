@@ -2,7 +2,7 @@
 
 ## Description
 
-Twitter Verse Bot, to tweet Bible verses every Sunday Morning at 8:30am. The bible verses will be fetched from a Bible api using feign.js and will be stored in a MongoDB database and from there a Bible verse will be picked at random from the db and using the cron job scheduler will be twittered at the respective time set.
+Twitter Verse Bot, to tweet Bible verses every Sunday Morning at 8:30am. The bible verses will be fetched from a Bible api using feign.js and will be stored in a MongoDB database and from there a Bible verse will be picked at random from the db and using the cron job scheduler will be twittered at the respective time set. This is an open-source project in case you were wondering. Contributions will be excepted, keep an eye on the readme file for more information in the future. 
 
 ## Running the Bible Verse Bot
 
