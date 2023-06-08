@@ -1,9 +1,12 @@
 import * as mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 class MongoDB {
   private static instance: MongoDB;
   private constructor() {
-    mongoose.connect('mongodb://root:rootpassword@localhost:27017', { dbName: 'bible-verses-db' } as mongoose.ConnectOptions).then(() => {
+    mongoose.connect(`${process.env.DB_URI}`, { dbName: 'bible-verses-db' } as mongoose.ConnectOptions).then(() => {
       console.log('Successfully connected to DB!');
     }, (err: Error) => {
       console.log(`Failed to connect here why: ${err}`);
