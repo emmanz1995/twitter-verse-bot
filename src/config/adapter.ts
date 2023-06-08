@@ -1,7 +1,18 @@
-import { VerseSchedulerImpl } from '../adapter/driver/scheduler/VerseSchedulerImpl';
-import { VerseScheduler } from '../application/port/adapter/VerseScheduler';
 import testController from '../adapter/driver/api/TestController';
+import ScriptureRepositoryImpl from '../adapter/driven/repository/db/mongo/scriptures/ScriptureRepositoryImpl';
+import {
+  ScriptureEntity,
+  scriptureEntityModel
+} from '../adapter/driven/repository/db/mongo/scriptures/scriptureEntity';
+import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
+import ScriptureRepository from '../application/port/adapter/ScriptureRepository';
 
-const verseScheduler: VerseScheduler = new VerseSchedulerImpl();
+const scriptureRepository: ScriptureRepository = new ScriptureRepositoryImpl(
+  mongoose.model<ScriptureEntity>(
+    'scripture',
+    new Schema(scriptureEntityModel)
+  )
+)
 
-export { verseScheduler, testController };
+export { testController, scriptureRepository };

@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import configureCors from './config/cors';
-import { verseScheduler, testController } from './config/adapter';
+import { testController } from './config/adapter';
+import MongoDB from './config/mongo';
 
 const app: Express = express();
 const PORT: number = 5001;
@@ -9,7 +10,7 @@ const PORT: number = 5001;
 configureCors(app);
 testController(app);
 
-verseScheduler.start();
+MongoDB.getInstance();
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT: ${PORT}`);
