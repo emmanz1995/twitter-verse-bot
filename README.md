@@ -65,6 +65,7 @@ Here are a list of details of the application environments that you would need t
 | access_token        | This is your access token twitter api provides you with        | your access token        |
 | access_token_secret | This is your access token secret twitter api provides you with | your access token secret |
 | bearer_token        | This is your bearer token twitter api provides you with        | bearer token             |
+| DB_URI              | This is your DB_URI so you can connect to you DB               | DB Connection String     |
 
 Written By Emmanuel and Anoj
 
