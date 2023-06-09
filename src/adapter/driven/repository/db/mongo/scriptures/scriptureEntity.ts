@@ -15,23 +15,28 @@ const scriptureEntityModel = {
   _id: {
     bookName: {
       type: String,
-      required: true
+      required: true,
     },
     chapter: {
       type: Number,
-      required: true
+      required: true,
     },
     verse: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   text: {
     type: String,
-    required: true
+    required: true,
   },
-}
+};
 
 interface IScriptureModel extends Model<ScriptureEntity> {}
 
-export { ScriptureIdentifierEntity, ScriptureEntity, IScriptureModel, scriptureEntityModel };
+export {
+  ScriptureIdentifierEntity,
+  ScriptureEntity,
+  IScriptureModel,
+  scriptureEntityModel,
+};
