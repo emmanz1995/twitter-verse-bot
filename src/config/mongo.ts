@@ -6,18 +6,14 @@ dotenv.config();
 class MongoDB {
   private static instance: MongoDB;
   private constructor() {
-    mongoose
-      .connect(`${process.env.DB_URI}`, {
+    try {
+      mongoose.connect(`${process.env.DB_URI}`, {
         dbName: 'bible-verses-db',
-      } as mongoose.ConnectOptions)
-      .then(
-        () => {
-          console.log('Successfully connected to DB!');
-        },
-        (err: Error) => {
-          console.log(`Failed to connect here why: ${err}`);
-        }
-      );
+      } as mongoose.ConnectOptions);
+      console.log('Successfully connected to DB!');
+    } catch (error) {
+      console.error('Failed to connect to MongoDB', error);
+    }
   }
 
   public static getInstance(): MongoDB {
