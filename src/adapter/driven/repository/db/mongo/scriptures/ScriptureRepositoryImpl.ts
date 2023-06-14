@@ -16,22 +16,24 @@ class ScriptureRepositoryImpl implements ScriptureRepository {
     const bulkOps = scriptures
       .map(scripture => ScriptureMongoMapper.toScriptureEntity(scripture))
       .map(entity => ({
-      updateOne: {
-        filter: { _id: entity._id },
-        update: entity,
-        upsert: true,
-      },
-    }));
+        updateOne: {
+          filter: { _id: entity._id },
+          update: entity,
+          upsert: true,
+        },
+      }));
     const bulkWrite = await this.scriptureModel.bulkWrite(bulkOps);
 
     return bulkWrite.isOk();
   }
 
-  public async getById(
-    id: ScriptureIdentifier
-  ): Promise<Scripture | null> {
-    const scriptureEntity = await this.scriptureModel.findById(ScriptureMongoMapper.toScriptureIdentifierEntity(id));
-    return scriptureEntity ? ScriptureMongoMapper.toScripture(scriptureEntity) : null;
+  public async getById(id: ScriptureIdentifier): Promise<Scripture | null> {
+    const scriptureEntity = await this.scriptureModel.findById(
+      ScriptureMongoMapper.toScriptureIdentifierEntity(id)
+    );
+    return scriptureEntity
+      ? ScriptureMongoMapper.toScripture(scriptureEntity)
+      : null;
   }
 }
 

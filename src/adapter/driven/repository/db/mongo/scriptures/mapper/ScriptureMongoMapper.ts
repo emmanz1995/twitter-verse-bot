@@ -6,10 +6,10 @@ class ScriptureMongoMapper {
       id: {
         bookName: scriptureEntity._id.bookName,
         verse: scriptureEntity._id.verse,
-        chapter: scriptureEntity._id.chapter
+        chapter: scriptureEntity._id.chapter,
       },
-      text: scriptureEntity.text
-    }
+      text: scriptureEntity.text,
+    };
   }
 
   static toScriptureEntity(scripture: Scripture): ScriptureEntity {
@@ -17,19 +17,21 @@ class ScriptureMongoMapper {
       _id: {
         bookName: scripture.id.bookName,
         chapter: scripture.id.chapter,
-        verse: scripture.id.verse
+        verse: scripture.id.verse,
       },
-      text: scripture.text
-    }
+      text: scripture.text,
+    };
   }
 
-  static toScriptureIdentifierEntity(identifier: ScriptureIdentifier): ScriptureIdentifierEntity {
+  static toScriptureIdentifierEntity(
+    identifier: ScriptureIdentifier
+  ): ScriptureIdentifierEntity {
     return {
-        bookName: identifier.bookName,
-        chapter: identifier.chapter,
-        verse: identifier.verse
-      }
-    }
+      bookName: identifier.bookName,
+      chapter: identifier.chapter,
+      verse: identifier.verse,
+    };
+  }
 }
 
-export { ScriptureMongoMapper }
+export { ScriptureMongoMapper };
