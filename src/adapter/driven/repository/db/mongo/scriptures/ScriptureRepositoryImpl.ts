@@ -4,30 +4,34 @@ import {
   ScriptureIdentifierEntity,
 } from './scriptureEntity';
 import ScriptureRepository from '../../../../../../application/port/adapter/ScriptureRepository';
+import { ScriptureMongoMapper } from './mapper/ScriptureMongoMapper';
 
 class ScriptureRepositoryImpl implements ScriptureRepository {
-  private readonly scripture: IScriptureModel;
-  public constructor(scripture: IScriptureModel) {
-    this.scripture = scripture;
+  private readonly scriptureModel: IScriptureModel;
+  public constructor(scriptureModel: IScriptureModel) {
+    this.scriptureModel = scriptureModel;
   }
 
-  public async saveAll(scriptures: ScriptureEntity[]): Promise<Boolean> {
-    const bulkOps = scriptures.map(scripture => ({
+  public async saveAll(scriptures: Scripture[]): Promise<Boolean> {
+    const bulkOps = scriptures
+      .map(scripture => ScriptureMongoMapper.toScriptureEntity(scripture))
+      .map(entity => ({
       updateOne: {
-        filter: { _id: scripture._id },
-        update: scripture,
+        filter: { _id: entity._id },
+        update: entity,
         upsert: true,
       },
     }));
-    const bulkWrite = await this.scripture.bulkWrite(bulkOps);
+    const bulkWrite = await this.scriptureModel.bulkWrite(bulkOps);
 
     return bulkWrite.isOk();
   }
 
   public async getById(
-    id: ScriptureIdentifierEntity
-  ): Promise<ScriptureEntity | null> {
-    return this.scripture.findById(id);
+    id: ScriptureIdentifier
+  ): Promise<Scripture | null> {
+    const scriptureEntity = await this.scriptureModel.findById(ScriptureMongoMapper.toScriptureIdentifierEntity(id));
+    return scriptureEntity ? ScriptureMongoMapper.toScripture(scriptureEntity) : null;
   }
 }
 
