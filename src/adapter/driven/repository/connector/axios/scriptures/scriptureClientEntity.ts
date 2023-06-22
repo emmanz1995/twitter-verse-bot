@@ -1,4 +1,4 @@
-import { AxiosAdapter } from 'axios';
+import { AxiosRequestConfig } from 'axios';
 
 interface ResponseObj {
   reference: String;
@@ -17,3 +17,7 @@ interface Client {
   response: ResponseObj;
   statusCode: Number;
 }
+
+interface IScriptureClientModel extends AxiosRequestConfig<Client> {}
+
+export { Client, IScriptureClientModel }

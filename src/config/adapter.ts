@@ -4,12 +4,11 @@ import {
   ScriptureEntity,
   scriptureEntityModel,
 } from '../adapter/driven/repository/db/mongo/scriptures/scriptureEntity';
-import * as mongoose from 'mongoose';
-import { Schema } from 'mongoose';
+import { Schema, model } from 'mongoose';
 import ScriptureRepository from '../application/port/adapter/ScriptureRepository';
 
 const scriptureRepository: ScriptureRepository = new ScriptureRepositoryImpl(
-  mongoose.model<ScriptureEntity>('scripture', new Schema(scriptureEntityModel))
+  model<ScriptureEntity>('scripture', new Schema(scriptureEntityModel))
 );
 
 export { testController, scriptureRepository };
