@@ -6,20 +6,18 @@ enum StatusCode {
 
 interface ResponseObj {
   reference: String;
+  translation_name?: String | undefined;
   verses: {
-    book_id: String;
-    book_name: String;
     chapter: String;
+    book_id: String;
     verse: Number;
-    text?: String;
-  }[];
+    text?: String | undefined;
+    book_name: String
+  }
   text: String;
-  translation_name?: String;
 }
 
 interface Client {
   data: ResponseObj;
-  status: StatusCode;
+  status: Number;
 }
-
-export default Client;

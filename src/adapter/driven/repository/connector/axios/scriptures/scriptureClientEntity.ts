@@ -7,17 +7,17 @@ interface ResponseObj {
     book_name: String;
     chapter: String;
     verse: Number;
-    text: String;
-  }[];
+    text?: String;
+  };
   text: String;
-  translation_name: String;
+  translation_name?: String;
 }
 
-interface Client {
-  response: ResponseObj;
+interface ClientEntity {
+  data: ResponseObj;
   statusCode: Number;
 }
 
 interface IScriptureClientModel extends AxiosRequestConfig<Client> {}
 
-export { Client, IScriptureClientModel }
+export { ClientEntity, IScriptureClientModel }
