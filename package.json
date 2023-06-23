@@ -25,15 +25,16 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "cron": "^2.3.0",
     "dotenv": "^16.0.3",
+    "exponential-backoff": "^3.1.1",
     "express": "^4.18.2",
     "inversify": "^6.0.1",
     "kafka-node": "^5.0.0",
     "lodash": "^4.17.21",
     "mongoose": "^7.0.3",
+    "ts-retrofit": "^1.19.0",
     "twit": "^2.2.11",
     "twitter-api-v2": "^1.14.2",
     "uuidv4": "^6.2.13"

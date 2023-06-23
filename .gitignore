@@ -3,3 +3,5 @@ src/config.ts
 .env
 docker-compose.yml
 public
+data/
+.idea/
