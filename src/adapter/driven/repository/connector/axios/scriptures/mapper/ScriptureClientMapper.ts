@@ -10,12 +10,12 @@ class ScriptureAxiosMapper {
           book_name: client.data.verses.book_name,
           chapter: client.data.verses.chapter,
           verse: client.data.verses.verse,
-          text: client.data.verses.text
+          text: client.data.verses.text,
         },
-        translation_name: client.data.translation_name
+        translation_name: client.data.translation_name,
       },
-      status: client.statusCode
-    }
+      status: client.statusCode,
+    };
   }
 
   static toApiClientEntity(client: Client): ClientEntity {
@@ -27,11 +27,11 @@ class ScriptureAxiosMapper {
           book_name: client.data.verses.book_name,
           chapter: client.data.verses.chapter,
           verse: client.data.verses.verse,
-          text: client.data.verses.text
+          text: client.data.verses.text,
         },
-        translation_name: client.data.translation_name
+        translation_name: client.data.translation_name,
       },
-      statusCode: client.status
-    }
+      statusCode: client.status,
+    };
   }
 }

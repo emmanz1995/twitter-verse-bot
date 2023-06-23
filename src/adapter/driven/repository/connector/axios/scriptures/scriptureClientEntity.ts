@@ -20,4 +20,4 @@ interface ClientEntity {
 
 interface IScriptureClientModel extends AxiosRequestConfig<Client> {}
 
-export { ClientEntity, IScriptureClientModel }
+export { ClientEntity, IScriptureClientModel };

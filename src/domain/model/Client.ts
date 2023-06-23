@@ -12,8 +12,8 @@ interface ResponseObj {
     book_id: String;
     verse: Number;
     text?: String | undefined;
-    book_name: String
-  }
+    book_name: String;
+  };
   text: String;
 }
 
